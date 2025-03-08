@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
+import styles from "./table.module.css";
 import { fetchData } from '../service/dataService';
 import TableHeader from './TableHeader';
 import TableRow from './TableRow';
@@ -46,16 +47,18 @@ const Table = () => {
   return (
     <div>
       <Filter filters={filters} onFilterChange={handleFilterChange} onApplyFilter={handleApplyFilter}/>
-      <table>
-        <thead>
-          <TableHeader onSort={handleSort} />
-        </thead>
-        <tbody>
-          {data.map((item) => (
-            <TableRow key={item.id} data={item} />
-          ))}
-        </tbody>
-      </table>
+      <div className={styles.result}>
+        <table>
+          <thead>
+            <TableHeader onSort={handleSort} />
+          </thead>
+          <tbody>
+            {data.map((item) => (
+              <TableRow key={item.id} data={item} />
+            ))}
+          </tbody>
+        </table>
+      </div>
       <Pagination
         currentPage={page}
         totalPages={totalPages}

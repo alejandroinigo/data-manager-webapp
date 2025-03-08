@@ -16,10 +16,22 @@ export const metadata = {
   description: "King Full-Stack Developer Tech Test",
 };
 
+// export default function RootLayout({ children }) {
+//   return (
+//     <html lang="en">
+//       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+//         {children}
+//       </body>
+//     </html>
+//   );
+// }
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
+      <body>
         {children}
       </body>
     </html>

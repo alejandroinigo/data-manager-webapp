@@ -1,0 +1,97 @@
+.result table {
+    /* border-collapse: collapse; */
+    border-spacing: 0;
+    /* border: 1px solid #ccc; */
+    /* border-collapse:separate;
+    border:solid black 1px; */
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: auto;
+}
+
+.result table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+}
+
+.result table tr {
+    background-color: white;
+    /* border: 1px solid #ddd; */
+    /* padding: .35em; */
+}
+
+.result table th,
+.result table td {
+    padding: 6px 20px 6px 30px;
+    text-align: left;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.result table th {
+    border-top: 1px solid var(--custom-yellow);
+    /* border-top-left-radius:10px;
+    border-top-right-radius:10px; */
+    background: var(--custom-yellow);
+    color: #fff;
+    line-height: 2;
+    /* padding-top: 19px;
+    padding-bottom: 19px; */
+    /* font-size: .85em;
+    letter-spacing: .1em; */
+    /* text-transform: uppercase; */
+}
+
+.result table th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.result table th:last-child {
+    border-top-right-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .result table {
+        border: 0;
+    }
+
+    .result table caption {
+        font-size: 1.3em;
+    }
+
+    .result table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .result table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    .result table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    .result table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .result table td:last-child {
+        border-bottom: 0;
+    }
+}

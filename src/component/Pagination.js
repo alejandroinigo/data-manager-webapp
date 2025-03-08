@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from "./pagination.module.css";
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     const pages = [];
@@ -7,7 +8,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     }
 
     return (
-        <div>
+        <div className={styles.pagination}>
             {pages.map((pageNum) => (
                 <button
                     key={pageNum}
