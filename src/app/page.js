@@ -5,7 +5,7 @@ import Table from '../component/Table';
 export default function Home() {
   return (
     <div>
-      <h1>Aplicación con Tabla Paginada</h1>
+      <h1>King Full-Stack Developer Tech Test</h1>
       <Table />
     </div>
     // <div className={styles.page}>

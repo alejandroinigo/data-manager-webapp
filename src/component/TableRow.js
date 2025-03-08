@@ -8,7 +8,6 @@ const TableRow = ({ data }) => {
       <td>{data.status}</td>
       <td>{data.createdOn}</td>
       <td>{data.description}</td>
-      createdOn
     </tr>
   );
 };

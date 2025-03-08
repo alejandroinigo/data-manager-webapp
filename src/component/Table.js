@@ -1,45 +1,37 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { fetchData } from '../service/dataService';
 import TableHeader from './TableHeader';
 import TableRow from './TableRow';
 import Pagination from './Pagination';
+import Filter from './Filter';
 
 const Table = () => {
   const [data, setData] = useState([]);
-  const [filters, setFilters] = useState({ id: '', name: '', createdOn: '' });
+  const [filters, setFilters] = useState({ name: '', status: '' });
+  const [appliedFilters, setAppliedFilters] = useState({ name: '', status: '' });
   const [sortBy, setSortBy] = useState(null);
   const [sortOrder, setSortOrder] = useState('asc');
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  const fetchData = async () => {
-    const response = await axios.get('http://localhost:8080/api/records', {
-      params: {
-        ...filters,
-        sortBy,
-        sortOrder,
-        page,
-        pageSize: 10,
-      },
-    });
-    // try {
-    // const response = await axios.get('http://localhost:8080/api/records');
-    // } catch (error) {
-    //   console.log(error);
-    // }
-
+  const getTableData = async (appliedFilters, sortBy, sortOrder, page) => {
+    const response = await fetchData(appliedFilters, sortBy, sortOrder, page);
     setData(response.data.items);
     setTotalPages(response.data.totalPages);
   };
 
   useEffect(() => {
-    fetchData();
-  }, [filters, sortBy, sortOrder, page]);
+    getTableData(appliedFilters, sortBy, sortOrder, page);
+  }, [appliedFilters, sortBy, sortOrder, page]);
 
   const handleFilterChange = (e) => {
     setFilters({ ...filters, [e.target.name]: e.target.value });
+  };
+
+  const handleApplyFilter = () => {
+    setAppliedFilters(filters);  // Aplicar los filtros al hacer clic en el botón
   };
 
   const handleSort = (column) => {
@@ -53,22 +45,7 @@ const Table = () => {
 
   return (
     <div>
-      <div>
-        <input
-          type="text"
-          name="campo1"
-          value={filters.campo1}
-          onChange={handleFilterChange}
-          placeholder="Filtrar por Campo 1"
-        />
-        <input
-          type="text"
-          name="campo2"
-          value={filters.campo2}
-          onChange={handleFilterChange}
-          placeholder="Filtrar por Campo 2"
-        />
-      </div>
+      <Filter filters={filters} onFilterChange={handleFilterChange} onApplyFilter={handleApplyFilter}/>
       <table>
         <thead>
           <TableHeader onSort={handleSort} />
