@@ -4,6 +4,13 @@
   font-size: 1rem;
   line-height: 24px;
 }
+
+.pagination .info {
+}
+
+.pagination .controls {
+}
+
 .pagination button {
   font-family: var(--font-geist-sans);
   color: var(--custom-dark-gray);
@@ -14,4 +21,8 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
+}
+
+.pagination button:disabled {
+  color: #ddd;
 }

@@ -1,14 +1,14 @@
+.result {
+    overflow-x: auto;
+}
 .result table {
-    /* border-collapse: collapse; */
+    display: block;
     border-spacing: 0;
-    /* border: 1px solid #ccc; */
-    /* border-collapse:separate;
-    border:solid black 1px; */
-    border-radius: 10px;
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 1200px;
     table-layout: auto;
+    height: 550px;
 }
 
 .result table caption {
@@ -30,19 +30,24 @@
 }
 
 .result table th {
+    /* begin fixed header */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    /* end fixed header */
     border-top: 1px solid var(--custom-yellow);
     background: var(--custom-yellow);
     color: #fff;
     line-height: 2;
 }
 
-.result table th:first-child {
+/* .result table th:first-child {
     border-top-left-radius: 10px;
 }
 
 .result table th:last-child {
     border-top-right-radius: 10px;
-}
+} */
 
 .result table td:first-child {
     border-left: 1px solid var(--custom-yellow);
