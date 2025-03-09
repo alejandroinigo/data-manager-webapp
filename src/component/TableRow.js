@@ -3,11 +3,11 @@ import React from 'react';
 const TableRow = ({ data }) => {
   return (
     <tr>
-      <td>{data.id}</td>
-      <td>{data.name}</td>
-      <td>{data.status}</td>
-      <td>{data.createdOn}</td>
-      <td>{data.description}</td>
+      <td data-label='Id'>{data.id}</td>
+      <td data-label='Name'>{data.name}</td>
+      <td data-label='Status'>{data.status}</td>
+      <td data-label='Created On'>{data.createdOn}</td>
+      <td data-label='Description'>{data.description}</td>
     </tr>
   );
 };

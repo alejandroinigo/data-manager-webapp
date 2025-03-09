@@ -31,7 +31,9 @@ const Filter = ({ filters, onFilterChange, onApplyFilter }) => {
                     </select>
                 </div>
                 <div className={styles.col}>
-                    <button onClick={onApplyFilter}>Apply Filters</button>
+                    <div className={styles.submit}>
+                        <button onClick={onApplyFilter}>Apply Filters</button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,15 @@
+.navbar {
+  display: grid;
+  background-color: var(--custom-orange);
+  color: white;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+  font-weight: bold;
+  box-shadow: 0 0 6px 0 rgb(0 0 0 / 60%);
+}
+
+.navbar > div{
+  max-width: 1024px;
+}

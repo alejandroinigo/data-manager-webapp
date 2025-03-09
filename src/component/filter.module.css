@@ -1,9 +1,11 @@
+.filter {
+    padding: 16px 0;
+}
 .filter button {
     background-color: var(--custom-orange);
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-
+    font-family: var(--font-geist-mono);
     appearance: none;
     border-radius: 128px;
     height: 48px;
@@ -16,34 +18,58 @@
     cursor: pointer;
     font-size: 16px;
     color: white;
-    line-height: 20px;
     font-weight: bold;
-    margin-top: 20px;
+    margin-right: auto;
 }
 
 .filter input[type=text],
 .filter select {
     width: 100%;
-    padding: 12px 20px;
     margin: 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    font-family: var(--font-geist-mono);
     color: var(--custom-dark-gray);
     font-size: 1rem;
     line-height: 24px;
 }
 
+.filter input[type=text] {
+    padding: 12px 20px;
+}
+
+.filter select {
+    padding: 14px 20px;
+}
+
 .filter .row {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: 2fr 1fr 1fr;
 }
 
 .filter .row .col {
-    flex: 1 0 33%;
-    padding-right: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter .row .col .submit {
+    margin-top: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .filter {
+        padding: 0;
+    }
+    .filter .row {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+    .filter .row .col .submit {
+        margin-left: auto;
+    }
 }
 
 @media (hover: hover) and (pointer: fine) {

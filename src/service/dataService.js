@@ -5,7 +5,7 @@ const apiClient = axios.create({
     timeout: 5000,
 });
 
-export const fetchData = async (filters, sortBy, sortOrder, page) => {
+export const fetchData = async (filters, sortBy, sortOrder, page, pageSize) => {
     try {
         const response = await apiClient.get('/api/records', {
             params: {
@@ -13,7 +13,7 @@ export const fetchData = async (filters, sortBy, sortOrder, page) => {
                 sortBy,
                 sortOrder,
                 page,
-                pageSize: 10,
+                pageSize,
             },
         });
         return response;

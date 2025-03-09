@@ -15,17 +15,18 @@ const Table = () => {
   const [sortBy, setSortBy] = useState(null);
   const [sortOrder, setSortOrder] = useState('asc');
   const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(20);
   const [totalPages, setTotalPages] = useState(1);
 
-  const getTableData = async (appliedFilters, sortBy, sortOrder, page) => {
-    const response = await fetchData(appliedFilters, sortBy, sortOrder, page);
-    setData(response.data.items);
-    setTotalPages(response.data.totalPages);
-  };
-
   useEffect(() => {
+    const getTableData = async (appliedFilters, sortBy, sortOrder, page) => {
+      const response = await fetchData(appliedFilters, sortBy, sortOrder, page, pageSize);
+      setData(response.data.items);
+      setTotalPages(response.data.totalPages);
+    };
+
     getTableData(appliedFilters, sortBy, sortOrder, page);
-  }, [appliedFilters, sortBy, sortOrder, page]);
+  }, [appliedFilters, sortBy, sortOrder, page, pageSize]);
 
   const handleFilterChange = (e) => {
     setFilters({ ...filters, [e.target.name]: e.target.value });
@@ -45,26 +46,22 @@ const Table = () => {
   };
 
   return (
-    <div>
-      <Filter filters={filters} onFilterChange={handleFilterChange} onApplyFilter={handleApplyFilter}/>
-      <div className={styles.result}>
-        <table>
-          <thead>
-            <TableHeader onSort={handleSort} />
-          </thead>
-          <tbody>
-            {data.map((item) => (
-              <TableRow key={item.id} data={item} />
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <Pagination
+      <><Filter filters={filters} onFilterChange={handleFilterChange} onApplyFilter={handleApplyFilter} /><div className={styles.result}>
+      <table>
+        <thead>
+          <TableHeader onSort={handleSort} />
+        </thead>
+        <tbody>
+          {data.map((item) => (
+            <TableRow key={item.id} data={item} />
+          ))}
+        </tbody>
+      </table>
+    </div><Pagination
         currentPage={page}
         totalPages={totalPages}
-        onPageChange={setPage}
-      />
-    </div>
+        pageSize={pageSize}
+        onPageChange={setPage} /></>
   );
 };
 

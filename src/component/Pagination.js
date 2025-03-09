@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./pagination.module.css";
 
-const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+const Pagination = ({ currentPage, totalPages, pageSize, onPageChange }) => {
     const pages = [];
     for (let i = 1; i <= totalPages; i++) {
         pages.push(i);
@@ -9,6 +9,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 
     return (
         <div className={styles.pagination}>
+            <span>Rows per page: {pageSize}, Select page: {pageSize}</span>
             {pages.map((pageNum) => (
                 <button
                     key={pageNum}
