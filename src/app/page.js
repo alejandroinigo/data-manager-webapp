@@ -17,7 +17,7 @@ export default function Home() {
         </main>
         <footer className={styles.footer}>
           <div>
-            <p>Search records web application</p>
+            <p>Data manager web application</p>
           </div>
         </footer>
       </div>

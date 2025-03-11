@@ -5,7 +5,7 @@
     background-color: var(--custom-orange);
     text-align: center;
     text-decoration: none;
-    font-family: var(--font-geist-mono);
+    font-family: var(--font-roboto-flex);
     appearance: none;
     border-radius: 128px;
     height: 48px;
@@ -16,9 +16,9 @@
         color 0.2s,
         border-color 0.2s;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     color: white;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin-right: auto;
 }
 
@@ -33,10 +33,16 @@
     color: var(--custom-dark-gray);
     font-size: 1rem;
     line-height: 24px;
+    height: 50px;
 }
 
 .filter input[type=text] {
     padding: 12px 20px;
+}
+
+.filter input[type=text]:-webkit-autofill,
+.filter input[type=text]:-webkit-autofill:focus {
+    transition: background-color 0s 600000s, color 0s 600000s !important;
 }
 
 .filter select {

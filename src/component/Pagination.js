@@ -22,12 +22,12 @@ const Pagination = ({ totalRecords, currentPage, pageSize, onPageChange }) => {
 
     return (
         <div className={styles.pagination}>
-            <div className="info">
+            <div className={styles.info}>
                 <span>
                     Showing {startRecord} to {endRecord} of {totalRecords} entries
                 </span>
             </div>
-            <div className="controls">
+            <div className={styles.controls}>
                 <button onClick={() => handlePageChange(1)} disabled={currentPage === 1}>
                     First
                 </button>
@@ -35,7 +35,7 @@ const Pagination = ({ totalRecords, currentPage, pageSize, onPageChange }) => {
                     onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
                     disabled={currentPage <= 1}
                 >
-                    Previous
+                    Prev.
                 </button>
                 {pageNumbers.map((page) => (
                     <button

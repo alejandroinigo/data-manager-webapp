@@ -13,7 +13,7 @@ const Table = () => {
   const [tableData, setTableData] = useState([]);
   const [filters, setFilters] = useState({ name: '', status: '' });
   const [appliedFilters, setAppliedFilters] = useState({ name: '', status: '' });
-  const [sortBy, setSortBy] = useState(null);
+  const [sortBy, setSortBy] = useState('id');
   const [sortOrder, setSortOrder] = useState('asc');
   const [totalRecords, setTotalRecords] = useState(0);
   const [page, setPage] = useState(1);
@@ -44,13 +44,9 @@ const Table = () => {
     setAppliedFilters(filters);  // Aplicar los filtros al hacer clic en el botón
   };
 
-  const handleSort = (column) => {
-    if (sortBy === column) {
-      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
-    } else {
-      setSortBy(column);
-      setSortOrder('asc');
-    }
+  const handleSort = (column, order) => {
+    setSortBy(column);
+    setSortOrder(order);
   };
 
   const handlePagination = (newPage) => {
@@ -95,26 +91,6 @@ const Table = () => {
         onPageChange={handlePagination} /></>
     );
   }
-
-  // return (
-  //     <><Filter filters={filters} onFilterChange={handleFilterChange} onApplyFilter={handleApplyFilter} /><div className={styles.result}>
-  //     <table>
-  //       <thead>
-  //         <TableHeader onSort={handleSort} />
-  //       </thead>
-  //       <tbody>
-  //         {data.map((item) => (
-  //           <TableRow key={item.id} data={item} />
-  //         ))}
-  //       </tbody>
-  //     </table>
-  //   </div><Pagination
-  //       totalRecords={totalRecords}
-  //       currentPage={page}
-  //       totalPages={totalPages}
-  //       pageSize={pageSize}
-  //       onPageChange={setPage} /></>
-  // );
 };
 
 export default Table;

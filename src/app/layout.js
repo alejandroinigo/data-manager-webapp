@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Fuzzy_Bubbles } from "next/font/google";
+import { Geist, Geist_Mono, Roboto_Flex } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,8 +11,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const robotoFlex = Roboto_Flex({
+  variable: "--font-roboto-flex",
+  subsets: ["latin"],
+});
+
 export const metadata = {
-  title: "Developer Tech Test",
+  title: "Data Manager Web App",
   description: "King Full-Stack Developer Tech Test",
 };
 
@@ -31,7 +36,7 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${robotoFlex.variable}`}>
         {children}
       </body>
     </html>

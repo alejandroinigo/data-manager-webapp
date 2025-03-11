@@ -1,13 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const TableHeader = ({ onSort }) => {
+  const [sortState, setSortState] = useState({ field: null, order: 'asc' });
+
+  const handleSort = (field) => {
+    let order = 'asc';
+    if (sortState.field === field && sortState.order === 'asc') {
+      order = 'desc';
+    }
+    setSortState({ field, order });
+    onSort(field, order);
+  };
+  
+  const getSortSymbol = (column) => {
+    if (sortState.field === column) {
+      return sortState.order === 'asc' ? '↑' : '↓';
+    }
+    return '';
+  };
+
   return (
     <tr>
-      <th onClick={() => onSort('id')}>Id</th>
-      <th onClick={() => onSort('name')}>Name</th>
-      <th onClick={() => onSort('status')}>Status</th>
-      <th onClick={() => onSort('createdOn')}>Created On</th>
-      <th onClick={() => onSort('description')}>Description</th>
+      <th onClick={() => handleSort('id')}>Id {getSortSymbol('id')}</th>
+      <th onClick={() => handleSort('name')}>Name {getSortSymbol('name')}</th>
+      <th>Status</th>
+      <th onClick={() => handleSort('createdOn')}>Created On {getSortSymbol('createdOn')}</th>
+      <th>Description</th>
     </tr>
   );
 };
