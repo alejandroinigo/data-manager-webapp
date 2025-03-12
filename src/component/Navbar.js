@@ -5,7 +5,7 @@ import Image from "next/image";
 const Navbar = () => {
   return (
     <>
-      <header className={styles.navbar}>
+      <header data-testid="navbar" className={styles.navbar}>
           <div>
             <div className={styles.logo}>
               <Image

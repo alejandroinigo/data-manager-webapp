@@ -3,7 +3,7 @@ import styles from "./filter.module.css";
 
 const Filter = ({ filters, onFilterChange, onApplyFilter }) => {
     return (
-        <div className={styles.filter}>
+        <div data-testid="filter" className={styles.filter}>
             <div className={styles.row}>
                 <div className={styles.col}>
                     <span>Name</span>

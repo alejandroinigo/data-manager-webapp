@@ -58,7 +58,7 @@ const Table = () => {
   if (totalRecords > 0) {
     return (
       <><Filter filters={filters} onFilterChange={handleFilterChange} onApplyFilter={handleApplyFilter} />
-        <div className={styles.result}>
+        <div data-testid="result" className={styles.result}>
           <table>
             <thead>
               <TableHeader onSort={handleSort} />
@@ -80,7 +80,7 @@ const Table = () => {
   } else {
     return (
       <><Filter filters={filters} onFilterChange={handleFilterChange} onApplyFilter={handleApplyFilter} />
-        <div className={styles.result}>
+        <div data-testid="result" className={styles.result}>
           <div className={styles.resultinfo}>
             No records found.
           </div>

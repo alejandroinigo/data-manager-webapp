@@ -7,15 +7,15 @@ export default function Home() {
   return (
     <>
       <div className={styles.page}>
-        <Navbar />
+        <Navbar/>
         <main className={styles.main}>
           <div>
             <h1>Search Records</h1>
             <p>Easily search, filter, and view detailed information about your records. Use the filters below to find the records you are looking for.</p>
-            <Table />
+            <Table data-testid="result"/>
           </div>
         </main>
-        <footer className={styles.footer}>
+        <footer data-testid="footer" className={styles.footer}>
           <div>
             <p>Data manager web application</p>
           </div>

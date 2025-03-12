@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div>
+  <div
+    class="page"
+  >
+    <header
+      class="navbar"
+      data-testid="navbar"
+    >
+      <div>
+        <div
+          class="logo"
+        >
+          <img
+            alt="King logo"
+            data-nimg="1"
+            decoding="async"
+            height="59"
+            loading="lazy"
+            src="/_next/image?url=%2Fkinglogo.webp&w=256&q=75"
+            srcset="/_next/image?url=%2Fkinglogo.webp&w=128&q=75 1x, /_next/image?url=%2Fkinglogo.webp&w=256&q=75 2x"
+            style="color: transparent;"
+            width="100"
+          />
+        </div>
+        <div
+          class="menu"
+        >
+          <a
+            href=""
+          >
+            Home
+          </a>
+        </div>
+      </div>
+    </header>
+    <main
+      class="main"
+    >
+      <div>
+        <h1>
+          Search Records
+        </h1>
+        <p>
+          Easily search, filter, and view detailed information about your records. Use the filters below to find the records you are looking for.
+        </p>
+        <div
+          class="filter"
+          data-testid="filter"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col"
+            >
+              <span>
+                Name
+              </span>
+              <input
+                name="name"
+                placeholder="Filter by name"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="col"
+            >
+              <span>
+                Status
+              </span>
+              <select
+                name="status"
+                placeholder="Filter by status"
+              >
+                <option
+                  value=""
+                />
+                <option
+                  value="COMPLETED"
+                >
+                  COMPLETED
+                </option>
+                <option
+                  value="CANCELED"
+                >
+                  CANCELED
+                </option>
+                <option
+                  value="ERROR"
+                >
+                  ERROR
+                </option>
+              </select>
+            </div>
+            <div
+              class="col"
+            >
+              <div
+                class="submit"
+              >
+                <button>
+                  Apply Filters
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="result"
+          data-testid="result"
+        >
+          <div
+            class="resultinfo"
+          >
+            No records found.
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="footer"
+      data-testid="footer"
+    >
+      <div>
+        <p>
+          Data manager web application
+        </p>
+      </div>
+    </footer>
+  </div>
+</div>
+`;
