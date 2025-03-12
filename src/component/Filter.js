@@ -26,7 +26,7 @@ const Filter = ({ filters, onFilterChange, onApplyFilter }) => {
                     >
                         <option value=""></option>
                         <option value="COMPLETED">COMPLETED</option>
-                        <option value="CANCELLED">CANCELLED</option>
+                        <option value="CANCELED">CANCELED</option>
                         <option value="ERROR">ERROR</option>
                     </select>
                 </div>

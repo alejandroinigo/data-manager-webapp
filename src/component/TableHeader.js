@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import styles from "./table.module.css";
 
 const TableHeader = ({ onSort }) => {
-  const [sortState, setSortState] = useState({ field: null, order: 'asc' });
+  const [sortState, setSortState] = useState({ field: 'id', order: 'asc' });
 
   const handleSort = (field) => {
     let order = 'asc';
@@ -14,17 +15,18 @@ const TableHeader = ({ onSort }) => {
   
   const getSortSymbol = (column) => {
     if (sortState.field === column) {
-      return sortState.order === 'asc' ? '↑' : '↓';
+      return sortState.order === 'asc' ? '↓' : '↑';
     }
-    return '';
+    return '⇵';
   };
 
   return (
     <tr>
-      <th onClick={() => handleSort('id')}>Id {getSortSymbol('id')}</th>
-      <th onClick={() => handleSort('name')}>Name {getSortSymbol('name')}</th>
+      <th className={styles.sort} onClick={() => handleSort('id')}><div><span>Id</span><span className={styles.symbol}>{getSortSymbol('id')}</span></div></th>
+      <th className={styles.sort} onClick={() => handleSort('name')}><div><span>Name</span><span className={styles.symbol} >{getSortSymbol('name')}</span></div></th>
       <th>Status</th>
-      <th onClick={() => handleSort('createdOn')}>Created On {getSortSymbol('createdOn')}</th>
+      <th>Delta</th>
+      <th className={styles.sort} onClick={() => handleSort('createdOn')}><div><span>Created On</span><span className={styles.symbol}>{getSortSymbol('createdOn')}</span></div></th>
       <th>Description</th>
     </tr>
   );

@@ -1,13 +1,12 @@
 .result {
     overflow-x: auto;
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 1px solid var(--custom-ultra-light-gray);
 }
 .result table {
     display: block;
     border-spacing: 0;
     margin: 0;
     padding: 0;
-    width: 1200px;
     table-layout: auto;
     height: 550px;
 }
@@ -17,20 +16,43 @@
     margin: .5em 0 .75em;
 }
 
-.result table tr {
+.result table tbody tr {
     background-color: white;
-    /* border: 1px solid #ddd; */
-    /* padding: .35em; */
 }
 
 .result table th,
 .result table td {
-    padding: 6px 20px 6px 30px;
+    padding: 6px 20px 6px 20px;
     text-align: left;
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 1px solid var(--custom-ultra-light-gray);
 }
 
 .result table th {
+    border: 1px solid var(--custom-yellow);
+}
+
+.result table .cellid{
+    min-width: 90px;
+}
+
+.result table .cellname{
+    min-width: 240px;
+}
+
+.result table .cellstatus{
+    min-width: 140px;
+}
+
+.result table .celldelta{
+    min-width: 80px;
+}
+
+.result table .cellcreatedon{
+    min-width: 220px;
+    white-space: nowrap;
+}
+
+.result table thead {
     /* begin fixed header */
     position: sticky;
     top: 0;
@@ -38,7 +60,7 @@
     /* end fixed header */
     border: 1px solid var(--custom-yellow);
     background: var(--custom-yellow);
-    color: #fff;
+    color: white;
     line-height: 2;
 }
 
@@ -54,10 +76,29 @@
     border-bottom: 1px solid var(--custom-yellow);
 }
 
+.result table .sort > div {
+    display: flex;
+}
+
+.result table .sort span {
+    white-space: nowrap;
+}
+
+.result table .symbol {
+    color: #8f8c8b;
+    padding-left: 5px;
+}
+
+.result .resultinfo {
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    background: #ffe596;
+}
+
 
 @media screen and (max-width: 600px) {
     .result {
-        border: 1px solid #f2f2f2;
+        border: 1px solid var(--custom-ultra-light-gray);
         border-radius: 10px;
     }
     .result table {
@@ -83,18 +124,19 @@
 
     .result table tr {
         border-radius: 10px;
-        border: 1px solid #ddd;
-        border-bottom: 3px solid #ddd;
+        border: 1px solid var(--custom-light-gray);
+        border-bottom: 3px solid var(--custom-light-gray);
         display: block;
         margin-bottom: .8em;
     }
 
     .result table td {
         padding: 6px;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid var(--custom-light-gray);
         display: block;
         font-size: .8em;
         text-align: right;
+        min-height: 30px;
     }
 
     .result table td::before {
@@ -109,14 +151,14 @@
     }
 
     .result table td:first-child {
-        border-left: 1px solid #f2f2f2;
+        border-left: 1px solid var(--custom-ultra-light-gray);
     }
     
     .result table td:last-child {
-        border-right: 1px solid #f2f2f2;
+        border-right: 1px solid var(--custom-ultra-light-gray);
     }
     
     .result table tr:last-child td {
-        border-bottom: 1px solid #f2f2f2;
+        border-bottom: 1px solid var(--custom-ultra-light-gray);
     }
 }

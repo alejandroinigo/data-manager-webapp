@@ -4,6 +4,8 @@
   --custom-orange: #FF6A00;
   --custom-yellow: #FFC000;
   --custom-dark-gray: #595554;
+  --custom-light-gray: #DDD;
+  --custom-ultra-light-gray: #F2F2F2;
 }
 
 @media (prefers-color-scheme: dark) {

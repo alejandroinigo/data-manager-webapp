@@ -1,9 +1,8 @@
 import React from 'react';
 import styles from "./pagination.module.css";
 
-const Pagination = ({ totalRecords, currentPage, pageSize, onPageChange }) => {
+const Pagination = ({ totalRecords, currentPage, totalPages, pageSize, onPageChange }) => {
     const pageNumbers = [];
-    const totalPages = Math.ceil(totalRecords / pageSize);
 
     const handlePageChange = (page) => {
         if (page >= 1 && page <= totalPages) {
@@ -14,7 +13,6 @@ const Pagination = ({ totalRecords, currentPage, pageSize, onPageChange }) => {
     let { startRecord, endRecord } = getRange(currentPage, pageSize, totalRecords);
 
     let { endPage, startPage } = getPageInterval(currentPage, totalPages);
-    // ({ endPage, startPage } = adjustPageRange(endPage, startPage, currentPage));
 
     for (let i = startPage; i <= endPage; i++) {
         pageNumbers.push(i);
@@ -58,25 +56,6 @@ const Pagination = ({ totalRecords, currentPage, pageSize, onPageChange }) => {
             </div>
         </div>
     );
-    // const pages = [];
-    // for (let i = 1; i <= totalPages; i++) {
-    //     pages.push(i);
-    // }
-
-    // return (
-    //     <div className={styles.pagination}>
-    //         <span>Rows per page: {pageSize}, Select page: </span>
-    //         {pages.map((pageNum) => (
-    //             <button
-    //                 key={pageNum}
-    //                 onClick={() => onPageChange(pageNum)}
-    //                 disabled={pageNum === currentPage}
-    //             >
-    //                 {pageNum}
-    //             </button>
-    //         ))}
-    //     </div>
-    // );
 };
 
 function getRange(currentPage, pageSize, totalRecords) {
