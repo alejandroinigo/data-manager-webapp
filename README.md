@@ -36,7 +36,7 @@ Follow these steps to set up the project locally.
     * Alternatively, clone the repository from GitHub:
 
     ```sh
-    git clone [https://github.com/alejandroinigo/data-manager-webapp.git](https://github.com/alejandroinigo/data-manager-webapp.git)
+    git clone https://github.com/alejandroinigo/data-manager-webapp.git
     ```
 
 2.  **Install Dependencies:**
@@ -62,7 +62,7 @@ Access the application in your browser at:
 
 The main screen is divided into the following sections:
 
-* **Status Filter:** Use this to filter the data by status.
+* **Data Filter:** Use this to filter the data by name and status.
 * **Results Table:** Displays the data. Click on the column headers (ID, Name, CreatedOn) to sort the table.
 * **Pagination Controls:** Navigate through the data with 20 entries per page.
 
